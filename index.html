@@ -2,216 +2,88 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
-
-  <!-- Put your site title here -->
-  <title>
-    Suyash Mishra.
-  </title>
-
-  <meta name="description" content="A Java based Developer with basics">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
-  <meta name="keywords" content="Suyash Mishra" />
-  <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suyash Mishra | Terminal Portfolio</title>
+  <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-
-  <!-- ***** Header ***** -->
-
-  <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-          <li class="nav__item">
-            <a href="https://github.com/indolab/Certificates/blob/main/SuyashMishra.pdf" class="nav__link">Resume</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
-        </ul>
+  <button id="toggle-ui" style="position:fixed;top:24px;right:32px;z-index:1001;padding:0.7em 1.3em;background:#222;color:#fff;border:none;border-radius:6px;font-weight:bold;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);">Switch to UI</button>
+  <div id="ui-portfolio" style="display:none;min-height:100vh;background:#fafbfc;">
+    <header style="display:flex;align-items:center;justify-content:space-between;padding:2em 3em 1.5em 3em;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+      <div style="display:flex;align-items:center;gap:1em;">
+        <img src="https://ui-avatars.com/api/?name=Suyash+Mishra&background=7fffd4&color=222&size=64" alt="avatar" style="width:48px;height:48px;border-radius:50%;border:2px solid #7fffd4;">
+        <span style="font-weight:bold;font-size:1.2em;color:#222;">Suyash Mishra</span>
+      </div>
+      <nav>
+        <a href="#" class="ui-nav" data-section="home" style="margin:0 1.2em;color:#222;font-weight:bold;text-decoration:none;">HOME</a>
+        <a href="#" class="ui-nav" data-section="about" style="margin:0 1.2em;color:#222;font-weight:bold;text-decoration:none;">ABOUT</a>
+        <a href="#" class="ui-nav" data-section="projects" style="margin:0 1.2em;color:#222;font-weight:bold;text-decoration:none;">PROJECTS</a>
+        <a href="#" class="ui-nav" data-section="contact" style="margin:0 1.2em;color:#222;font-weight:bold;text-decoration:none;">CONTACT</a>
       </nav>
+    </header>
+    <div style="display:flex;">
+      <aside style="width:60px;display:flex;flex-direction:column;align-items:center;gap:1.5em;padding-top:4em;">
+        <a href="#" style="color:#222;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" style="width:28px;"></a>
+        <a href="#" style="color:#222;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" style="width:28px;"></a>
+        <a href="#" style="color:#222;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" style="width:28px;"></a>
+        <a href="#" style="color:#222;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" style="width:28px;"></a>
+        <a href="#" style="color:#222;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/book.svg" alt="Blog" style="width:28px;"></a>
+      </aside>
+      <main id="ui-main" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0.5em 2em 2em 2em;min-height:80vh;background:repeating-linear-gradient(135deg,#f5f6fa 0 40px,#fafbfc 40px 80px);">
+        <section id="ui-home" class="ui-section">
+          <h1 style="font-size:3.2em;font-weight:900;letter-spacing:1px;color:#222;margin-bottom:0.3em;">HEY, I'M SUYASH MISHRA</h1>
+          <p style="font-size:1.25em;color:#444;max-width:600px;text-align:center;margin-bottom:2em;">A Full Stack Developer passionate about building robust, scalable web applications and tools that drive success and innovation.</p>
+          <a href="#" id="ui-projects-btn" style="background:#ffd600;color:#222;font-weight:bold;padding:1em 2.5em;border-radius:8px;font-size:1.1em;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.2s;">PROJECTS</a>
+        </section>
+        <section id="ui-about" class="ui-section" style="display:none;">
+          <div style="display:flex;align-items:flex-start;gap:2.5em;justify-content:center;max-width:900px;margin:0 auto;padding-top:0.5em;">
+            <div style="flex:0 0 180px;display:flex;flex-direction:column;align-items:center;">
+              <img src="https://ui-avatars.com/api/?name=Suyash+Mishra&background=7fffd4&color=222&size=128" alt="avatar" style="width:120px;height:120px;border-radius:50%;border:3px solid #7fffd4;margin-bottom:1em;">
+              <div style="display:flex;flex-direction:column;gap:0.7em;align-items:center;">
+                <a href="mailto:suyashm480@gmail.com" style="color:#7fffd4;font-size:1.1em;text-decoration:none;">suyashm480@gmail.com</a>
+                <a href="#" style="color:#222;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" style="width:28px;"></a>
+                <a href="#" style="color:#222;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" style="width:28px;"></a>
+                <a href="#" style="color:#222;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" style="width:28px;"></a>
+              </div>
+            </div>
+            <div style="flex:1;min-width:0;">
+              <h2 style="font-size:2em;color:#222;margin-bottom:0.5em;">About Me</h2>
+              <p style="font-size:1.1em;color:#444;max-width:600px;">Hi, I'm Suyash Mishra! Full-stack Java Developer skilled in Spring Boot microservices, REST/SOAP API design, and cloud-native deployment. Experienced in agile delivery, unit testing (JUnit, Mockito), and CI/CD with Docker and Jenkins. Proficient in front-end exposure (React/Angular) and database management (MySQL, MongoDB). Passionate about clean architecture, scalable systems, and fintech innovation.</p>
+              <ul style="margin-top:1.2em;margin-bottom:0.5em;padding-left:1.2em;color:#222;font-size:1.05em;line-height:1.7;max-width:600px;">
+                <li>Languages: Java, Python, SQL, Bash</li>
+                <li>Frameworks: Spring Boot, Django, Hibernate, JPA, MVC</li>
+                <li>Front-end: React, Angular, TypeScript, JavaScript</li>
+                <li>Cloud & DevOps: Docker, Kubernetes, AWS, Jenkins, Maven, Git</li>
+                <li>Databases: MySQL, PostgreSQL, MongoDB</li>
+                <li>Concepts: Microservices, JWT Auth, REST/SOAP, Agile/Scrum, Secure Coding, Unit Testing</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="ui-projects" class="ui-section" style="display:none;">
+          <h2 style="font-size:2em;color:#222;margin-bottom:0.5em;">Projects</h2>
+          <div id="ui-projects-list" style="display:flex;flex-wrap:wrap;gap:2em;justify-content:center;">
+            <!-- Project cards will be rendered here by JS -->
+          </div>
+        </section>
+        <section id="ui-contact" class="ui-section" style="display:none;">
+          <h2 style="font-size:2em;color:#222;margin-bottom:0.5em;">Contact</h2>
+          <p style="font-size:1.1em;color:#444;max-width:600px;text-align:center;">Email: <a href="mailto:suyashm480@gmail.com" style="color:#7fffd4;">suyashm480@gmail.com</a><br>LinkedIn: <a href="#" style="color:#7fffd4;">linkedin.com/in/suyashxm</a></p>
+        </section>
+      </main>
     </div>
-    <div class="profile-container">
-      <img src="./images/profile.jpg" alt="Profile Picture" class="profile-pic">
+    <div id="project-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.45);z-index:2000;align-items:center;justify-content:center;"></div>
   </div>
-  
+  <div id="terminal" class="terminal-container">
+    <div id="terminal-banner" class="terminal-banner"></div>
+    <div id="terminal-output" class="terminal-output"></div>
+    <form id="terminal-form" autocomplete="off">
+      <span class="terminal-prompt">suyash@portfolio:~$</span>
+      <input id="terminal-input" class="terminal-input" type="text" autofocus spellcheck="false" autocomplete="off" />
+    </form>
   </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
-          <span>Suyash Mishra</span>
-        </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p>Let's Code in Java.</p>
-        
-        <a href="#contact" class="btn btn--pink">Get in touch</a>
-      </div>
-    </div>
-  </header>
-
-  <main role="main">
-
-    <!-- ***** Work ***** -->
-
-    <section class="work" id="work">
-      <div class="row">
-        <h2>My Work</h2>
-        <div class="work__boxes">
-
-          <!-- Each div with the work__box class is a project. -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>E-Bharat</h3>
-              <p>
-                An E-Commerce App based on online shop store.
-              </p>
-              <ul class="work__list">
-                <li>Java</li>
-                <li>Mongodb</li>
-                <li>Jpa</li>
-                <li>Spring Boot (maven)</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://payx.netlify.app/" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/indolab/Ecommerce" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>PayX</h3>
-              <p>
-                A Payment App based on wallet transctions with paypal. U can add money to account and transfer to other users. Sendor recive through the bank itself or use payment intent provided by paypal.
-              </p>
-              <ul class="work__list">
-                <li>Java</li>
-                <li>paypal-rest-sdk</li>
-                <li>Mysql</li>
-                <li>Docker</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="#https://github.com/indolab/payx" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/indolab/payx">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-2.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Conceptile</h3>
-              <p>
-               Microservice based Quiz management system. Each quiz has its own set of questions and answers. concurrently multiple users can attempt the quiz. With dashboard to see the results, and admin can create, update, delete the quiz.
-              </p>
-              <ul class="work__list">
-                <li>Crud</li>
-                <li>Rest_Api</li>
-                <li>MongoDB</li>
-                <li>Docker</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://github.com/indolab/conceptile" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/indolab/conceptile">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-   
-
-  
-
-  <!-- ***** Contact ***** -->
-
-  <section class="contact" id="contact">
-    <div class="row">
-      <h2>Get in Touch</h2>
-      <div class="contact__info">
-        <p>
-          Hi, I'm a passionate software developer with experience in building web and mobile applications. I specialize in Java, Go, and Flutter, creating seamless and efficient applications. With a background in software development, I have worked on various projects, including a P2P payment app and a hospital management system. My goal is to develop innovative solutions that enhance user experiences and solve real-world problems
-        </p>
-        <!-- Replace the email with yours -->
-        <a href="mailto:suyashm480@gmail.com" class="btn">suyashm480@gmail.com</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ***** Footer ***** -->
-
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <!-- Update the links to point to your accounts -->
-      <ul class="footer__social-links">
-        <li class="footer__social-link-item">
-          <a href="https://twitter.com/suyashxm/" title="Link to Twitter Profile">
-            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://github.com/indolab/" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://www.instagram.com/suyashxm/" title="Link to Instagram Profile">
-            <img src="./images/codepen.svg" class="footer__social-image" alt="Instagram">
-          </a>
-        
-        <li class="footer__social-link-item">
-          <a href=https://www.linkedin.com/in/suayshxm/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
-          </a>
-        </li>
-      </ul>
-
-      <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
-      <p>
-        &copy; 2020 - Template designed & developed by <a href="https://www.github.com/indolab" class="link">Suyash</a>.
-      </p>
-      <div class="footer__github-buttons">
-        <a href="https://www.github.com/indolab" class="github-button" data-size="large" aria-label="Follow @indolab on GitHub">Follow</a>
-      </div>
-    </div>
-  </footer>
-
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
-  </a>
-  <script src="./index.js"></script>
+  <script src="index.js"></script>
 </body>
-
 </html>
