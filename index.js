@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Techie ASCII banner with border and system info
   const ASCII_BANNER = [
     `<span style="color:#7fffd4; font-family: 'Fira Mono', monospace; white-space: pre;">
-       .-.        _______                             .  '  *   .  . '
+            .-.      _______                             .  '  *   .  . '
       {{}}''; |==|_______D                              .  * * -+-  
       / ('        /|\                             .    * .    '  *
   (  /  |        / | \                                * .  ' .  . 
@@ -42,33 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     '<span style="color:#7fffd4;">[boot]</span> Use help command to nevigate or switch to ui mode <span style="color:#c8ffc8;"></span>!'
 
   ];
-
-  const PROJECTS = {
-    payx: {
-      name: 'PayX',
-      desc: 'P2P payment microservices with PayPal API. 1,000+ transactions, 98% success rate.',
-      tech: 'Java, Spring Boot, MySQL, Docker',
-      link: 'https://github.com/indolab/payx'
-    },
-    ton: {
-      name: 'TON Token Tracker',
-      desc: 'APIs for analyzing token balances, with caching for low latency.',
-      tech: 'Java, Spring Boot',
-      link: '#'
-    },
-    ebharat: {
-      name: 'E-Bharat',
-      desc: 'E-Commerce app with Spring Boot, MongoDB.',
-      tech: 'Java, MongoDB, JPA, Spring Boot',
-      link: 'https://github.com/indolab/Ecommerce'
-    },
-    conceptile: {
-      name: 'Conceptile',
-      desc: 'Quiz management microservices, concurrent users, admin dashboard.',
-      tech: 'CRUD, REST API, MongoDB, Docker',
-      link: 'https://github.com/indolab/conceptile'
-    }
-  };
 
   let gameActive = false;
   let gameNumber = null;
@@ -127,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
       `<span style='color:#7fffd4;'><b>project &lt;name&gt;</b></span>  <span style='color:#c8ffc8;'>Show details for a project (e.g. project payx)</span>`,
       `<span style='color:#7fffd4;'><b>contact</b></span>      <span style='color:#c8ffc8;'>Show contact info</span>`,
       `<span style='color:#7fffd4;'><b>game</b></span>         <span style='color:#c8ffc8;'>Play a guessing game</span>`,
-      `<span style='color:#7fffd4;'><b>ui</b></span>           <span style='color:#c8ffc8;'>Toggle UI mode (not implemented)</span>`,
+      `<span style='color:#7fffd4;'><b>ui</b></span>           <span style='color:#c8ffc8;'>Toggle UI mode</span>`,
       `<span style='color:#7fffd4;'><b>clear</b></span>        <span style='color:#c8ffc8;'>Clear the terminal</span>`,
       `<span style='color:#7fffd4;'><b>exit</b></span>         <span style='color:#c8ffc8;'>Exit the terminal</span>`,
     ];
@@ -163,67 +136,10 @@ document.addEventListener('DOMContentLoaded', function() {
   function showContact() {
     return [
       `Email: <a href="mailto:suyashm480@gmail.com" style='color:#7fffd4;'>suyashm480@gmail.com</a>`,
-      `LinkedIn: <a href="https://www.linkedin.com/in/suyashxm/" target="_blank" style='color:#7fffd4;'>suyashxm</a>`,
-      `GitHub: <a href="https://github.com/indolab" target="_blank" style='color:#7fffd4;'>indolab</a>`,
-      `Twitter: <a href="https://twitter.com/suyashxm/" target="_blank" style='color:#7fffd4;'>@suyashxm</a>`
+      `LinkedIn: <a href="https://www.linkedin.com/in/suyashxm/" target="_blank" style='color:#7fffd4;'>linkedin.com/in/suyashxm</a>`,
+      `GitHub: <a href="https://github.com/indolab/" target="_blank" style='color:#7fffd4;'>github.com/indolab</a>`,
+      `Twitter: <a href="https://twitter.com/suyashxm/" target="_blank" style='color:#7fffd4;'>twitter.com/suyashxm</a>`
     ];
-  }
-
-  function showUI() {
-    return [`<span style='color:#c8ffc8;'>UI toggle not implemented. You are already in the best mode!</span>`];
-  }
-
-  async function showExitCard() {
-    // Blurred background and center message
-    terminalContainer.style.backdropFilter = 'blur(8px)';
-    terminalContainer.style.background = 'rgba(24,24,24,0.7)';
-    terminalContainer.style.display = 'flex';
-    terminalContainer.style.flexDirection = 'column';
-    terminalContainer.style.justifyContent = 'center';
-    terminalContainer.style.alignItems = 'center';
-    terminalContainer.style.overflow = 'hidden';
-    terminalContainer.style.height = '100vh';
-    terminalOutput.innerHTML = '';
-    terminalForm.style.display = 'none';
-
-    // Terminal shutdown animation
-    const shutdownLines = [
-      '<span style="color:#7fffd4;">[system]</span> Saving session...',
-      '<span style="color:#7fffd4;">[system]</span> Logging out user <span style="color:#c8ffc8;">suyash@portfolio</span>',
-      '<span style="color:#7fffd4;">[system]</span> Shutting down virtual terminal...',
-      '<span style="color:#7fffd4;">[system]</span> If you are considering candidates for an open technical role,',
-      '<span style="color:#7fffd4;">[system]</span> <span style="color:#7fffd4;">Suyash Mishra</span> would love to connect.',
-      '<span style="color:#7fffd4;">[system]</span> Goodbye!'
-    ];
-    for (const line of shutdownLines) {
-      await printTyped(line, 15);
-      await new Promise(r => setTimeout(r, 250));
-    }
-    await new Promise(r => setTimeout(r, 500));
-
-    // Fade in final message
-    const msg = document.createElement('div');
-    msg.style.color = '#c8ffc8';
-    msg.style.fontSize = '1.25em';
-    msg.style.textAlign = 'center';
-    msg.style.fontFamily = "'Fira Mono', monospace";
-    msg.style.opacity = '0';
-    msg.style.transition = 'opacity 1s';
-    msg.innerHTML = `
-      <div style="color:#7fffd4; font-size:1.2em; margin-bottom:1em;">
-        <span class="terminal-prompt" style="font-size:1.1em;">suyash@portfolio:~$</span>
-      </div>
-      <div style="margin-bottom:1.5em;">
-        <b>Thank you for visiting!</b><br><br>
-        <span style="font-size:0.95em; color:#c8ffc8;">Contact: <a href="mailto:suyashm480@gmail.com" style="color:#7fffd4;">suyashm480@gmail.com</a></span>
-      </div>
-      <div style="margin-top:1.5em; color:#7fffd4; font-size:1.1em; animation: floatPrompt 2s infinite alternate;">
-        <span class="terminal-prompt">_</span>
-      </div>
-      <style>@keyframes floatPrompt { 0%{transform:translateY(0);} 100%{transform:translateY(-10px);} }</style>
-    `;
-    terminalOutput.appendChild(msg);
-    setTimeout(() => { msg.style.opacity = '1'; }, 100);
   }
 
   function showExit() {
@@ -304,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (const line of startGame()) await printTyped(line);
         break;
       case 'ui':
-        for (const line of showUI()) await printTyped(line);
+        switchToUI();
         break;
       case 'clear':
         clearTerminal();
@@ -331,16 +247,33 @@ document.addEventListener('DOMContentLoaded', function() {
   // UI/Terminal toggle logic
   const toggleBtn = document.getElementById('toggle-ui');
   const uiPortfolio = document.getElementById('ui-portfolio');
+  const toggleIconTerminal = document.getElementById('toggle-icon-terminal');
+  const toggleIconUi = document.getElementById('toggle-icon-ui');
+
+  function switchToUI() {
+    uiPortfolio.style.display = 'block';
+    terminalContainer.style.display = 'none';
+    toggleIconUi.style.display = 'none';
+    toggleIconTerminal.style.display = 'block';
+    toggleBtn.title = 'Switch to Terminal';
+    document.body.style.overflow = 'auto'; // Enable scrolling for UI
+  }
+
+  function switchToTerminal() {
+    uiPortfolio.style.display = 'none';
+    terminalContainer.style.display = 'flex';
+    toggleIconUi.style.display = 'block';
+    toggleIconTerminal.style.display = 'none';
+    toggleBtn.title = 'Switch to UI';
+    terminalInput.focus();
+    document.body.style.overflow = 'hidden'; // Disable scrolling for Terminal
+  }
+
   toggleBtn.addEventListener('click', function() {
     if (uiPortfolio.style.display === 'none') {
-      uiPortfolio.style.display = 'block';
-      terminalContainer.style.display = 'none';
-      toggleBtn.textContent = 'Switch to Terminal';
+      switchToUI();
     } else {
-      uiPortfolio.style.display = 'none';
-      terminalContainer.style.display = 'flex';
-      toggleBtn.textContent = 'Switch to UI';
-      terminalInput.focus();
+      switchToTerminal();
     }
   });
 
@@ -349,14 +282,53 @@ document.addEventListener('DOMContentLoaded', function() {
     home: document.getElementById('ui-home'),
     about: document.getElementById('ui-about'),
     projects: document.getElementById('ui-projects'),
+    resume: document.getElementById('ui-resume'),
     contact: document.getElementById('ui-contact'),
   };
   const navLinks = document.querySelectorAll('.ui-nav');
-  const projectsBtn = document.getElementById('ui-projects-btn');
   const projectsList = document.getElementById('ui-projects-list');
   const projectModal = document.getElementById('project-modal');
 
   // Project data
+  const PROJECTS = {
+    payx: {
+      name: 'PayX',
+      desc: 'P2P payment microservices with PayPal API. 1,000+ transactions, 98% success rate.',
+      tech: 'Built with Java, Spring Boot, MySQL, Docker. Secure, scalable, and integrated with PayPal for international transfers.',
+      link: 'https://github.com/indolab/conceptile'
+    },
+    ton: {
+      name: 'TON Token Tracker',
+      desc: 'APIs for analyzing token balances, with caching for low latency.',
+      tech: 'Java, Spring Boot. Real-time analytics for 33 wallets, with advanced caching for performance.',
+      link: '#'
+    },
+    ebharat: {
+      name: 'E-Bharat',
+      desc: 'E-Commerce app with Spring Boot, MongoDB.',
+      tech: 'Java, MongoDB, JPA, Spring Boot. Modern e-commerce backend with product, order, and user management.',
+      link: '#'
+    },
+    conceptile: {
+      name: 'Conceptile',
+      desc: 'Quiz management microservices, concurrent users, admin dashboard.',
+      tech: 'CRUD, REST API, MongoDB, Docker. Multi-user quiz platform with admin controls and analytics.',
+      link: '#'
+    },
+    healtdoc: {
+      name: 'Healtdoc',
+      desc: 'Appointment scheduling and REST/SOAP APIs for healthcare.',
+      tech: 'Django, REST/SOAP, React. Improved appointment speed by 40%, robust error handling, and secure authentication.',
+      link: '#'
+    },
+    trainxar: {
+      name: 'TrainXAR',
+      desc: 'A Django-based CRM for managing clients and projects.',
+      tech: 'Django, Python, HTML, CSS',
+      link: '#'
+    }
+  };
+
   const PROJECTS_UI = [
     {
       title: 'PayX',
@@ -381,7 +353,14 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       title: 'Healtdoc',
       desc: 'Appointment scheduling and REST/SOAP APIs for healthcare.',
-      details: 'Django, REST/SOAP, React. Improved appointment speed by 40%, robust error handling, and secure authentication.'
+      details: 'Django, REST/SOAP, React. Improved appointment speed by 40%, robust error handling, and secure authentication.',
+      link: '#'
+    },
+    {
+      title: 'TrainXAR',
+      desc: 'A Django-based CRM for managing clients and projects.',
+      details: 'Full-featured Customer Relationship Management system built with Django. Includes client tracking, project management, and reporting features.',
+      link: '#'
     }
   ];
 
@@ -395,10 +374,6 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       showSection(link.dataset.section);
     });
-  });
-  projectsBtn.addEventListener('click', e => {
-    e.preventDefault();
-    showSection('projects');
   });
 
   // Render project cards
